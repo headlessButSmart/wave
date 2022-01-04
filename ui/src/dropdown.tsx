@@ -14,7 +14,7 @@
 
 import * as Fluent from '@fluentui/react'
 import { B, Id, S, U } from 'h2o-wave'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { stylesheet } from 'typestyle'
 import { Choice } from './choice_group'
 import { fuzzysearch } from './parts/utils'
@@ -86,7 +86,9 @@ const
       isMultivalued = !!values,
       selection = React.useMemo(() => isMultivalued ? new Set<S>(values) : null, [isMultivalued, values]),
       [selectedOptions, setSelectedOptions] = React.useState(Array.from(selection || [])),
-      options = (choices || []).map(({ name, label, disabled }): Fluent.IDropdownOption => ({ key: name, text: label || name, disabled })),
+      mapChoices = () => (choices || []).map(({ name, label, disabled }): Fluent.IDropdownOption => ({ key: name, text: label || name, disabled })),
+      choicesRef = useRef(mapChoices()),
+      options = choicesRef.current,
       onChange = (_e?: React.FormEvent<HTMLElement>, option?: Fluent.IDropdownOption) => {
         if (option) {
           const optionKey = option.key as S
@@ -123,6 +125,13 @@ const
 
         onChange()
       }
+      
+      useEffect(() => {
+        const newChoices = mapChoices()
+        if (JSON.stringify(options) !== JSON.stringify(newChoices)) {
+          choicesRef.current = newChoices
+        }
+      }, [options, mapChoices])
 
     return (
       <>
