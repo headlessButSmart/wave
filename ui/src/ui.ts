@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { B, box, boxed, ChangeSet, connect, Dict, Disposable, on, Rec, S, U, Wave, WaveEvent, WaveEventType } from 'h2o-wave'
+import { B, box, boxed, ChangeSet, connect, Dict, Disposable, on, Rec, S, U, Wave, WaveEvent, WaveEventType } from './h2o-wave'//RIERINO: Interim for h2o-wave
 import * as React from 'react'
 
 //
@@ -33,9 +33,15 @@ export function bond<TProps, TState extends Renderable>(ctor: (props: TProps) =>
     constructor(props: TProps) {
       super(props)
 
+      //State access
+      //const getState = (name) => self.state[name]
+      //const setState = (name, value) => self.setState({ [name]: value })
+
       const
         // eslint-disable-next-line @typescript-eslint/no-this-alias
         self = this,
+        //Allow state access to model
+        //model = ctor({ ...props, getState, setState }),
         model = ctor(props),
         arrows: Disposable[] = []
 
@@ -50,6 +56,7 @@ export function bond<TProps, TState extends Renderable>(ctor: (props: TProps) =>
       this.state = {}
     }
     componentDidMount() {
+      //Allow props in init
       if (this.model.init) this.model.init()
     }
     componentDidUpdate() {
@@ -113,8 +120,9 @@ export const
       window.setTimeout(() => { wait = false }, timeout)
     }
   },
-  listen = (address: S) => {
-    _wave = connect(address, e => {
+  //Allow passing of custom server and route
+  listen = (server:S, path: S, route:S) => {
+    _wave = connect(server, path, route, e => {
       switch (e.t) {
         case WaveEventType.Page:
         case WaveEventType.Error:
