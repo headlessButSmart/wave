@@ -43,6 +43,10 @@ var (
 	upgrader = websocket.Upgrader{
 		ReadBufferSize:  1024, // TODO review
 		WriteBufferSize: 1024, // TODO review
+		//Removed cross origin check to allow embedded use
+		CheckOrigin: func(r *http.Request) bool { 
+        		return true
+		},
 	}
 )
 
