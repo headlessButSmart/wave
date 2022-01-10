@@ -1,7 +1,7 @@
 {
   "name": "wave-ui",
   "version": "0.1.0",
-  "private": true,
+  "REMOVED_private": true,
   "dependencies": {
     "@antv/g2": "4.1.0",
     "@fluentui/react": "^7.175.2",
