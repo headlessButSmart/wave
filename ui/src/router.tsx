@@ -14,7 +14,8 @@
 
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import App from './app'
+//import App from './app'
+import App from './custom/index'
 import Login from './login'
 import { wave } from './ui'
 
