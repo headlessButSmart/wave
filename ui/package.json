@@ -9,7 +9,7 @@
     "@popperjs/core": "^2.1.1",
     "d3": "^7.3.0",
     "fs-extra": "^8.1.0",
-    "h2o-wave": "npm:@rierino/h2o-wave@^1.0.0",
+    "h2o-wave": "npm:@rierino/h2o-wave@*",
     "handlebars": "^4.7.7",
     "markdown-it": "^11.0.0",
     "markdownlint-cli": "^0.25.0",
