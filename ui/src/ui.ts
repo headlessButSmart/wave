@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { B, box, boxed, ChangeSet, connect, Dict, Disposable, on, Rec, S, U, Wave, WaveEvent, WaveEventType } from './h2o-wave'//RIERINO: Interim for h2o-wave
+import { B, box, boxed, ChangeSet, connect, Dict, Disposable, on, Rec, S, U, Wave, WaveEvent, WaveEventType } from 'h2o-wave'
 import * as React from 'react'
 
 //
@@ -26,7 +26,7 @@ interface Renderable {
   dispose?(): void
 }
 
-export function bond<TProps, TState extends Renderable>(ctor: (props: TProps) => TState) {
+export function bond<TProps, TState extends Renderable>(ctor: (props: TProps & { setState: any, getState: any }) => TState) {
   return class extends React.Component<TProps> {
     private readonly model: TState
     private readonly arrows: Disposable[]
@@ -34,15 +34,15 @@ export function bond<TProps, TState extends Renderable>(ctor: (props: TProps) =>
       super(props)
 
       //State access
-      //const getState = (name) => self.state[name]
-      //const setState = (name, value) => self.setState({ [name]: value })
+      const getState = (name) => self.state[name]
+      const setState = (name, value) => self.setState({ [name]: value })
 
       const
         // eslint-disable-next-line @typescript-eslint/no-this-alias
         self = this,
         //Allow state access to model
-        //model = ctor({ ...props, getState, setState }),
-        model = ctor(props),
+        model = ctor({ ...props, getState, setState }),
+        //model = ctor(props),
         arrows: Disposable[] = []
 
       Object.keys(model).forEach(k => {
