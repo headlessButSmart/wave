@@ -9,7 +9,7 @@
     "@popperjs/core": "^2.1.1",
     "d3": "^7.3.0",
     "fs-extra": "^8.1.0",
-    "h2o-wave": "file:../ts",
+    "h2o-wave": "npm:@rierino/h2o-wave@^1.0.0",
     "handlebars": "^4.7.7",
     "markdown-it": "^11.0.0",
     "markdownlint-cli": "^0.25.0",
@@ -29,9 +29,6 @@
     "vega-lite": "^5.2.0",
     "vega-typings": "^0.22.1"
   },
-  "bundledDependencies":[
-    "h2o-wave"
-  ],
   "devDependencies": {
     "@babel/core": "7.8.4",
     "@svgr/webpack": "4.3.3",
