@@ -173,7 +173,7 @@ export interface Dict<T> { [key: string]: T }
 /** Identifier (non-empty string). */
 export type Id = S
 /** Record; named "Rec" to distinguish from Typescript's Record<K,T> utility type. */
-export type Rec = Dict<Prim | Prim[] | Rec | Rec[]> // 
+export type Rec = Dict<Prim | Prim[] | Rec | Rec[]> //
 /** Several records. */
 export type Recs = Rec[]
 /** An object, or a serialized string representation of the object. */
@@ -797,7 +797,11 @@ const
     return page
   },
   keyseq = (...keys: S[]): S => keys.join(' '),
-  toSocketAddress = (path: S): S => {
+  toSocketAddress = (server:S, path: S): S => {
+    //Allow passing separate server for cross-origin feed
+    if(server){
+      return server + path
+    }
     const
       { protocol, host } = window.location,
       p = protocol === 'https:' ? 'wss' : 'ws'
@@ -807,14 +811,15 @@ const
 
 export const
   disconnect = () => refreshRateB(0),
-  connect = (address: S, handle: WaveEventHandler): Wave => {
+  //Allowed passing slug as parameter
+  connect = (server:S, path: S, route:S, handle: WaveEventHandler): Wave => {
     let
       _socket: WebSocket | null = null,
       _page: XPage | null = null,
       _backoff = 1
 
     const
-      slug = window.location.pathname,
+      slug = route?route:window.location.pathname,
       reconnect = (address: S) => {
         const retry = () => reconnect(address)
         const socket = new WebSocket(address)
@@ -904,7 +909,7 @@ export const
       if (_socket) _socket.close()
     })
 
-    reconnect(toSocketAddress(address))
+    reconnect(toSocketAddress(server, path))
 
     return { fork, push }
   }
