@@ -1,8 +1,5 @@
 {
-  "REMOVED": {
-    "private": true
-  },
-  "name": "wave-ui",
+  "name": "@rierino/wave-ui",
   "version": "0.1.0",
   "main": "./lib/cjs/custom/index.js",
   "module": "./lib/esm/custom/index.js",
