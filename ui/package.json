@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "main": "./lib/cjs/custom/index.js",
   "module": "./lib/esm/custom/index.js",
+  "peerDependencies":{
+    "react": ">=16.13.0",
+    "react-dom": ">=16.13.0"
+  },
   "dependencies": {
     "@antv/g2": "4.1.0",
     "@fluentui/react": "^7.175.2",
@@ -14,9 +18,7 @@
     "markdown-it": "^11.0.0",
     "markdownlint-cli": "^0.25.0",
     "plotly.js": "^2.8.3",
-    "react": "^16.13.0",
     "react-app-polyfill": "^1.0.6",
-    "react-dom": "^16.13.0",
     "react-intl": "^5.7.1",
     "react-plotly.js": "^2.5.1",
     "react-router-dom": "^5.2.0",
