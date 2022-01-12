@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { fireEvent, render, wait } from '@testing-library/react'
+import { fireEvent, render, waitFor } from '@testing-library/react'
 import React from 'react'
 import SidePanel, { sidePanelB } from './side_panel'
 import { wave } from './ui'
@@ -36,7 +36,7 @@ describe('SidePanel.tsx', () => {
     const { queryByRole } = render(<SidePanel />)
     expect(queryByRole('dialog')).toBeInTheDocument()
     sidePanelB(null)
-    await wait(() => expect(queryByRole('dialog')).not.toBeInTheDocument())
+    await waitFor(() => expect(queryByRole('dialog')).not.toBeInTheDocument())
   })
 
   it('should render X closing button when specified', () => {
@@ -47,7 +47,7 @@ describe('SidePanel.tsx', () => {
   it('should close side panel when clicking on X', async () => {
     const { container, queryByRole } = render(<SidePanel />)
     fireEvent.click(container.parentElement?.querySelector('.ms-Panel-closeButton') as any)
-    await wait(() => expect(queryByRole('dialog')).not.toBeInTheDocument())
+    await waitFor(() => expect(queryByRole('dialog')).not.toBeInTheDocument())
   })
 
   it('should fire event if specified when clicking on X', () => {

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { fireEvent, render, wait } from '@testing-library/react'
+import { fireEvent, render, waitFor } from '@testing-library/react'
 import React from 'react'
 import Dialog, { dialogB } from './dialog'
 import { wave } from './ui'
@@ -37,7 +37,7 @@ describe('Dialog.tsx', () => {
     const { queryByRole } = render(<Dialog />)
     expect(queryByRole('dialog')).toBeInTheDocument()
     dialogB(null)
-    await wait(() => expect(queryByRole('dialog')).not.toBeInTheDocument())
+    await waitFor(() => expect(queryByRole('dialog')).not.toBeInTheDocument())
   })
 
   it('should render correct title when specified', () => {
@@ -57,7 +57,7 @@ describe('Dialog.tsx', () => {
     dialogB({ ...dialogProps, closable: true })
     const { getByTitle, queryByRole } = render(<Dialog />)
     fireEvent.click(getByTitle('Close'))
-    await wait(() => expect(queryByRole('dialog')).not.toBeInTheDocument())
+    await waitFor(() => expect(queryByRole('dialog')).not.toBeInTheDocument())
   })
 
   it('should fire event if specified when clicking on X', () => {

@@ -18,7 +18,7 @@ import { stylesheet } from 'typestyle'
 import { clas, cssVar, getContrast, padding } from './theme'
 
 
-/** 
+/**
  * Creates a collection of tags, usually used for rendering state values.
  * In case of multiple tags per row, make sure the row values are
  * separated by "," within a single cell string.
@@ -50,10 +50,10 @@ export interface Tag {
 const css = stylesheet({
   tag: {
     borderRadius: 4,
-    padding: padding(4, 16),
-    '&:not(:first-child)': {
-      marginLeft: 8
-    }
+    padding: padding(4, 16)
+  },
+  'tag:not(:first-child)': {
+    marginLeft: 8
   }
 })
 

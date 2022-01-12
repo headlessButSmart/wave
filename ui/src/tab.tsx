@@ -61,7 +61,7 @@ export const
       },
       render = () => {
         const
-          linkFormat = state.link ? PivotLinkFormat.links : PivotLinkFormat.tabs,
+          linkFormat = state.link ? "links" : "tabs",
           items = state.items.map(({ name, label, icon }) => (
             <PivotItem key={name} itemKey={name} headerText={label} itemIcon={icon} />
           ))

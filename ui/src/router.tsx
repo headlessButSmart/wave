@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 //import App from './app'
 import App from './custom/index'
 import Login from './login'
@@ -36,9 +36,9 @@ const
       ]
     return (
       <BrowserRouter>
-        <Switch>
-          {routes.map((r, i) => <Route key={i} path={r.path} exact={r.exact} render={r.render} />)}
-        </Switch>
+        <Routes>
+          {routes.map((r, i) => <Route key={i} path={r.path} element={r.render} />)}
+        </Routes>
       </BrowserRouter>
     )
   }
