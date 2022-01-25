@@ -148,26 +148,31 @@ export const View = bond(
                   const hiddenFinding =
                     getState("hidden_finding_" + c + "_" + f + "_" + fi) ||
                     !details
-                  const bodyFinding = () => {
-                    if (!hiddenFinding) {
-                      let d = 0
-                      const detailDivs = details.map((detail) => (
-                        <div className="rie-wave-insight-detail-content" key={d++}>
-                          <div
-                            dangerouslySetInnerHTML={{
-                              __html: detail["content"],
-                            }}
-                          />
-                        </div>
-                      ))
-                      return (
-                        <div className="rie-wave-insight-finding-body">
-                          {detailDivs}
-                        </div>
-                      )
-                    }
-                    return null
+
+                  console.log(c + "_" + f + "_" + fi)
+                  console.log(details)
+                  console.log(hiddenFinding)
+
+                  let bodyFinding = null
+
+                  if (!hiddenFinding) {
+                    let d = 0
+                    const detailDivs = details.map((detail) => (
+                      <div className="rie-wave-insight-detail-content" key={d++}>
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: detail["content"],
+                          }}
+                        />
+                      </div>
+                    ))
+                    bodyFinding = (
+                      <div className="rie-wave-insight-finding-body">
+                        {detailDivs}
+                      </div>
+                    )
                   }
+
                   const detailLink =
                     details != null ? (
                       <div
@@ -245,7 +250,7 @@ export const View = bond(
                       {markers}
                     </div>
                     <div className="rie-wave-insight-field-value">
-                      {field["score"] * 100}%
+                      { (field["score"] * 100).toFixed(1) }%
                     </div>
                   </div>
                   {bodyField}

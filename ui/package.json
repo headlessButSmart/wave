@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "./lib/cjs/custom/index.js",
   "module": "./lib/esm/custom/index.js",
-  "peerDependencies":{
+  "peerDependencies": {
     "react": ">=16.13.0",
     "react-dom": ">=16.13.0"
   },
@@ -67,6 +67,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-wave": "file:eslint",
     "file-loader": "6.2.0",
+    "html-loader": "^3.1.0",
     "html-webpack-plugin": "5.5.0",
     "http-proxy-middleware": "^2.0.1",
     "identity-obj-proxy": "3.0.0",
@@ -77,7 +78,6 @@
     "jest-watch-typeahead": "1.0.0",
     "mini-css-extract-plugin": "2.4.6",
     "node-sass": "^7.0.1",
-    
     "pnp-webpack-plugin": "1.7.0",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-loader": "6.2.1",
@@ -90,10 +90,12 @@
     "sass-loader": "12.4.0",
     "style-loader": "3.3.1",
     "terser-webpack-plugin": "5.3.0",
+    "ts-loader": "^9.2.6",
     "ts-pnp": "1.2.0",
     "typescript": "^4.5.4",
     "url-loader": "4.1.1",
     "webpack": "5.65.0",
+    "webpack-cli": "^4.9.1",
     "webpack-dev-server": "4.7.3",
     "webpack-manifest-plugin": "4.1.1",
     "workbox-webpack-plugin": "6.4.2"
@@ -109,7 +111,9 @@
     "lint-staged:tests": "npx jest --findRelatedTests --bail",
     "build-ts-wave": "tsc --project ./tsconfig.json --module esnext --outDir ./lib/esm",
     "build-ts-wave:cjs": "tsc --project ./tsconfig.json --module commonjs --outDir ./lib/cjs",
-    "build-wave": "npm run build-ts-wave && npm run build-ts-wave:cjs"
+    "build-wave": "npm run build-ts-wave && npm run build-ts-wave:cjs",
+    "build-webpack": "webpack",
+    "start-webpack": "webpack-dev-server --mode development"
   },
   "browserslist": {
     "production": [

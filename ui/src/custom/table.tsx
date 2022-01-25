@@ -36,7 +36,7 @@ export const
             }
             colsHtml.push(
               <td className={(col.className?(col.className+" "):"")+(entry.className?entry.className:"")}>
-              {rowHtml}
+                <div dangerouslySetInnerHTML={{ __html: rowHtml}}/>
               </td>
             )
           }

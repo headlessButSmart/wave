@@ -1,0 +1,396 @@
+.rierino-wave {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--colors--magnolia);
+  border-radius: 0px 0px 29px 29px;
+}
+
+.rie-wave-card{
+  height:100%;
+  position:relative;
+  /* Colors/White */
+  background: var(--colors--white);
+  border: 1.5px solid;
+  border-color: var(--colors--hawkes-blue);
+  box-sizing: border-box;
+  /* S_Textbox */
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+}
+
+.rie-wave-card .rie-wave-card-header{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.rie-wave-card .rie-wave-card-body{
+  position: absolute;
+  top: 30px;
+  bottom: 0px;
+  left:0px;
+  right:0px;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  /* Vertically center elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rie-wave-card.rie-wave-card-endless .rie-wave-card-body{
+  position: inherit;
+  align-self: start;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+}
+
+.rie-wave-title{
+  font: var(--fonts--bold-14);
+  display: flex;
+  align-items: center;
+  color: var(--colors--bright-gray);
+}
+
+.rie-wave-card-body .rie-wave-card-content{
+  height: 100%;
+  width: 100%;
+
+  /* Vertically center elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rie-wave-card-body .rie-wave-card-content-table table{
+  width: 100%;
+  height: 100%;
+}
+
+.rie-wave-card-body .rie-wave-card-content.rie-wave-card-content-html{
+  height:auto;
+  display:flex;
+}
+.rie-wave-card.rie-wave-card-no-header .rie-wave-card-body{
+  top:0;
+  bottom:0;
+}
+
+/* PLOTLY */
+
+.rie-wave-plotly-plot .hoverlayer{
+  -webkit-filter: drop-shadow( 0px 4px 3px rgb(0 0 0 / 32%) );
+  filter: drop-shadow( 0px 4px 3px rgb(0 0 0 / 32%) );
+}
+
+.rie-wave-plotly-plot .treemap path.surface {
+    stroke: none !important;
+}
+
+.rie-wave-rounded-bars .point, .rie-wave-rounded-bars .bg{
+  clip-path: inset(0% 0% 0% 0% round 10px);
+}
+
+.rie-wave-rounded-slices g.slice {
+    clip-path: inset(0% 0% 0% 0% round 10px);
+}
+
+.rie-wave-plotly-single .rie-wave-plotly-plot{
+  width:100%;
+  height:100%;
+}
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-right .rie-wave-plotly-plot,
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-right .rie-wave-plotly-annotation,
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-left .rie-wave-plotly-plot,
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-left .rie-wave-plotly-annotation{
+  height:100%;
+  width:50%;
+}
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-left .rie-wave-plotly-annotation{
+  order:1;
+}
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-left .rie-wave-plotly-plot{
+  order:2;
+}
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-right .rie-wave-plotly-annotation{
+  order:2;
+}
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-right .rie-wave-plotly-plot{
+  order:1;
+}
+
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-bottom,
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-top{
+  flex-direction: column;
+}
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-bottom .rie-wave-plotly-plot,
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-bottom .rie-wave-plotly-annotation,
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-top .rie-wave-plotly-plot,
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-top .rie-wave-plotly-annotation{
+  height:50%;
+  width:100%;
+}
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-top .rie-wave-plotly-plot{
+  order:2;
+}
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-top .rie-wave-plotly-annotation{
+  order:1;
+}
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-bottom .rie-wave-plotly-plot{
+  order:1;
+}
+.rie-wave-plotly-annotated.rie-wave-plotly-annotation-bottom .rie-wave-plotly-annotation{
+  order:2;
+}
+/* INSIGHT LIST */
+.rie-wave-card.rie-wave-card-insight .rie-wave-card-body{
+  background: var(--colors--white);
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 20%);
+  border-radius: 8px 8px 0px 0px;
+  border-color: var(--colors--hawkes-blue);
+  bottom: auto;
+}
+.rie-wave-insight-category{
+  width:100%;
+}
+.rie-wave-insight-category-header{
+  background: var(--colors--titan-white);
+  font: var(--fonts--semibold-12);
+  color: var(--colors--lynch);
+  height: 45px;
+}
+.rie-wave-insight-field-header{
+  background: var(--colors--magnolia);
+  font: var(--fonts--medium-11);
+  color: var(--colors--lynch);
+  height: 48px;
+}
+.rie-wave-insight-finding-header{
+  background: var(--colors--white);
+  font: var(--fonts--regular-11);
+  color: var(--colors--lynch);
+  height: 48px;
+}
+.rie-wave-insight-detail-content{
+  background: var(--colors--magnolia);
+  font: var(--fonts--medium-12);
+  color: var(--colors--lynch);
+  height: 48px;
+}
+.rie-wave-insight-header,
+.rie-wave-insight-detail-content {
+  display:flex;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom: var(--colors--hawkes-blue) 1px solid;
+}
+.rie-wave-insight-header > div,
+.rie-wave-insight-detail-content > div {
+  margin-top:auto;
+  margin-bottom:auto;
+}
+.rie-wave-insight-category-title,
+.rie-wave-insight-field-title,
+.rie-wave-insight-finding-content,
+.rie-wave-insight-detail-content{
+  flex-grow:1;
+}
+.rie-wave-insight-field-title,
+.rie-wave-insight-finding-content{
+  padding-left:15px;
+}
+.rie-wave-insight-finding-header{
+  padding-left:50px;
+}
+.rie-wave-insight-detail-content{
+  padding-left:75px;
+}
+.rie-wave-insight-finding-link,
+.rie-wave-insight-field-marker{
+  margin-right:15px;
+}
+.rie-wave-insight-finding-link{
+  font:var(--fonts--medium-11);
+  color:var(--colors--electric-violet);
+}
+.rie-wave-insight-finding-link,
+.rie-wave-insight-category-button,
+.rie-wave-insight-field-button{
+  cursor: pointer;
+}
+
+.rie-wave-insight-field-marker{
+  display:flex;
+}
+.rie-wave-insight-field-value {
+    background-color: var(--colors--selago);
+    border-radius: 100px 0px 0px 100px;
+    color: var(--colors--purple-heart);
+    font-size: var(--fonts--medium-11);
+    line-height: 28px;
+    width: 64px;
+    text-align: center;
+    margin-right: -15px;
+}
+.rie-wave-insight-finding-marker-missing{
+  color:var(--colors--mandy);
+}
+.rie-wave-insight-finding-marker-issue{
+  color:var(--colors--portage);
+}
+.rie-wave-insight-finding-marker-suggestion{
+  color:var(--colors--shamrock);
+}
+.rie-wave-insight-finding-icon{
+  background-size: cover;
+  background-position: center;
+  border-radius:50%;
+  width: 25px;
+  height: 25px;
+}
+.rie-wave-insight-finding-icon-missing{
+  background-color:var(--colors--mandy);
+  background-image: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.0023 21.9998C15.0844 21.9998 14.2217 21.8113 13.4382 21.4395C13.2046 21.3286 13.1051 21.0493 13.2158 20.8156C13.3266 20.5819 13.6057 20.4823 13.8393 20.5931C18.1125 22.566 22.5906 18.1362 20.5639 13.8407C20.3183 13.2735 21.1223 12.8867 21.4098 13.4394C23.3185 17.3662 20.3553 22.036 16.0023 21.9998ZM11.2198 18.8161C11.453 18.7045 11.5515 18.4248 11.4399 18.1915C9.40812 13.926 13.8865 9.40049 18.1654 11.4406C18.3989 11.5514 18.678 11.4518 18.7888 11.2181C18.8995 10.9844 18.8 10.7051 18.5664 10.5942C13.4589 8.1946 8.20253 13.5062 10.5956 18.5958C10.7075 18.8314 10.9918 18.9268 11.2198 18.8161ZM10.8104 21.8626L21.856 10.81C22.0388 10.6271 22.0388 10.3305 21.856 10.1476C21.6733 9.96476 21.3769 9.96474 21.1942 10.1476L10.1485 21.2003C9.96576 21.3832 9.96576 21.6798 10.1485 21.8626C10.3313 22.0455 10.6277 22.0455 10.8104 21.8626Z" fill="white"></path></svg>');
+}
+.rie-wave-insight-finding-icon-issue{
+  background-color:var(--colors--portage);
+  background-image: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M24.0119 18.7784L17.9617 9.00124C17.5742 8.37426 16.9028 8 16.1658 8C15.4287 8 14.7574 8.37429 14.3699 9.00124L14.3701 9.00095L8.31951 18.7787C7.91122 19.4393 7.89323 20.2385 8.27134 20.9168C8.64946 21.5951 9.33883 22 10.1154 22H22.2162C22.9928 22 23.6821 21.5951 24.0602 20.9168C24.4384 20.2385 24.4204 19.4393 24.0119 18.7784ZM22.9461 20.2956C22.7964 20.5641 22.5236 20.7243 22.2162 20.7243H10.1154C9.80801 20.7243 9.53516 20.5641 9.3855 20.2956C9.23583 20.0272 9.24295 19.7108 9.40438 19.4497L15.4548 9.67224L15.455 9.67195C15.6107 9.42009 15.8697 9.27565 16.1658 9.27565C16.4619 9.27565 16.721 9.42009 16.8768 9.67221L22.927 19.4494C23.0886 19.7108 23.0958 20.0272 22.9461 20.2956Z" fill="white"></path><path d="M16.8036 18.3326H15.528V19.6082H16.8036V18.3326Z" fill="white"></path><path d="M16.8036 12.0501H15.528V17.0569H16.8036V12.0501Z" fill="white"></path></svg>');
+}
+.rie-wave-insight-finding-icon-suggestion{
+  background-color:var(--colors--shamrock);
+  background-image: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.0001 7C12.6916 7 10 9.69163 10 13.0001C10 13.781 10.1666 15.7329 11.8671 17.343C12.773 18.212 13.2926 19.4292 13.2926 20.6826C13.2926 20.9654 13.522 21.1952 13.8049 21.1952H18.1978C18.4808 21.1952 18.7101 20.9657 18.7101 20.6828C18.7101 19.4304 19.2298 18.2139 20.1341 17.3465C21.3374 16.2016 22 14.6581 22 13.0001C22.0001 9.69163 19.3085 7 16.0001 7ZM19.4264 16.6055C18.4441 17.5476 17.8337 18.8248 17.7092 20.1705H16.7108L18.1324 15.9058C18.1844 15.7497 18.1583 15.5779 18.062 15.4443C17.9658 15.3106 17.811 15.2315 17.6463 15.2315H14.3538C14.189 15.2315 14.0344 15.3106 13.938 15.4443C13.8419 15.5779 13.8156 15.7496 13.8676 15.9058L15.2892 20.1705H14.2936C14.1693 18.824 13.5586 17.5457 12.574 16.6014C11.5749 15.6553 11.0247 14.3763 11.0247 13.0001C11.0247 10.2567 13.2567 8.02467 16.0001 8.02467C18.7435 8.02467 20.9755 10.2567 20.9755 13.0001C20.9755 14.3747 20.4258 15.6547 19.4264 16.6055ZM16.0001 19.0626L15.0645 16.2562H16.9355L16.0001 19.0626Z" fill="white"></path><path d="M17.6464 21.8168H14.3538C14.0708 21.8168 13.8415 22.0461 13.8415 22.3291C13.8415 22.6121 14.0708 22.8414 14.3538 22.8414H17.6464C17.9294 22.8414 18.1587 22.6121 18.1587 22.3291C18.1587 22.0461 17.9294 21.8168 17.6464 21.8168Z" fill="white"></path><path d="M17.0976 23.4631H14.9024C14.6195 23.4631 14.3901 23.6924 14.3901 23.9754C14.3901 24.2584 14.6195 24.4877 14.9024 24.4877H17.0976C17.3806 24.4877 17.6099 24.2584 17.6099 23.9754C17.6099 23.6924 17.3806 23.4631 17.0976 23.4631Z" fill="white"></path></svg>');
+}
+
+/* SECTION HEADER */
+.rie-wave-card.rie-wave-card-section-header{
+  display:flex;
+  background: var(--colors--titan-white);
+  border: 1.5px solid;
+  border-color: var(--colors--hawkes-blue);
+  box-sizing: border-box;
+  /* S_Textbox */
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.03);
+  border-radius: 8px 8px 0px 0px;
+}
+.rie-wave-section-header-title{
+  flex-grow: 1;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  color: var(--fonts--semibold-12);
+  align-items: center;
+  letter-spacing: 0.2px;
+  color: var(--colors--lynch);
+}
+.rie-wave-section-header-button{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.rie-wave-section-header-button svg{
+  display:block;
+}
+
+/* STAT CARD */
+.rie-wave-stat-value{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 28px;
+  /* identical to box height, or 127% */
+
+  flex-grow: 1;
+  align-items: center;
+
+  color: var(--colors--paris-m);
+}
+
+.rie-wave-stat-card{
+  display: flex;
+}
+
+.rie-wave-stat-card .rie-wave-card-header{
+  height:auto;
+}
+.rie-wave-stat-card .rie-wave-card-body{
+  top:auto;
+}
+
+.rie-wave-stat-card .rie-wave-title{
+  font: var(--fonts--medium-11);
+  color: var(--colors--lynch);
+}
+
+.rie-wave-stat-card .rie-wave-card-left{
+  text-align: center;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.rie-wave-stat-icon{
+  background: var(--colors--titan-white);
+
+  border: 1.2px solid;
+  border-color: var(--colors--portage);
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.rie-wave-stat-icon svg{
+  display: block;
+  height: 100%;
+  margin: auto;
+}
+
+.rie-wave-stat-card .rie-wave-card-right{
+  position: relative;
+  flex-grow: 1;
+}
+.rie-wave-stat-trend{
+  font: var(--fonts--medium-12);
+  width:45px;
+  border-radius: 4px;
+  text-align: center;
+}
+.rie-wave-stat-trend-inc:before{
+  font: var(--fonts--medium-12);
+  content: " ▲ ";
+}
+.rie-wave-stat-trend-inc{
+  color: var(--colors--shamrock);
+  background: var(--colors--polar);
+}
+
+.rie-wave-stat-trend-dec:before{
+  font: var(--fonts--medium-12);
+  content: " ▼ ";
+}
+.rie-wave-stat-trend-dec{
+  color: var(--colors--mandy);
+  background: var(--colors--azalea);
+}
+
+/* MULTI ROW */
+.rie-wave-card-rows-content{
+  flex-direction:column;
+}
+
+.rie-wave-plotly-annotation{
+  display: flex;
+  align-items: center;
+}
