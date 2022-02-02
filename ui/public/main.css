@@ -46,6 +46,26 @@
   align-items: center;
 }
 
+/************** ADD TO ADMIN UI ****************/
+.rie-wave-card .rie-wave-tooltip{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+}
+/*tooltip is rendered outside the card divs*/
+.ms-Tooltip .ms-Callout-beakCurtain,
+.ms-Tooltip .ms-Callout-main,
+.ms-Tooltip .ms-Callout-beak{
+	background-color:var(--colors--paris-m);
+}
+.ms-Tooltip .ms-Tooltip-content{
+  color:var(--colors--magnolia);
+  font: var(--fonts--medium-10);
+}
+/************** ADD TO ADMIN UI ****************/
+
 .rie-wave-card.rie-wave-card-endless .rie-wave-card-body{
   position: inherit;
   align-self: start;
@@ -83,6 +103,25 @@
 .rie-wave-card.rie-wave-card-no-header .rie-wave-card-body{
   top:0;
   bottom:0;
+}
+
+/* RECOMMENDATION */
+
+.rie-wave-card-recommendation{
+  background-color: var(--colors--polar);
+  border: none;
+  border-left-color: var(--colors--shamrock);
+  border-left-width: 5px;
+  border-left-style: solid;
+  color: var(--colors--shamrock);
+  font: var(--fonts--medium-12);
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.rie-wave-card-recommendation-icon{
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /* PLOTLY */

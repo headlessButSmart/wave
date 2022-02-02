@@ -1,6 +1,6 @@
 
 /* RIERINO FONTS (for CSS only) */
-.rie-wave-card {
+.rie-wave-card, .ms-Tooltip {
   /* style variant weight size/line family */
   --fonts--bold-28: normal 700 28px/35px Montserrat;
   --fonts--bold-24: normal 700 24px/30px Montserrat;
@@ -29,7 +29,7 @@
 }
 
 /* RIERINO COLORS (for CSS only) */
-.rie-wave-card {
+.rie-wave-card, .ms-Tooltip {
   --colors--tolopea: #1B064C;
   --colors--heliotrope: #9A42FF;
   --colors--paris-m: #20075A;
