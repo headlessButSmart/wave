@@ -7,6 +7,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
     alias: {
       handlebars: "handlebars/dist/handlebars.js",
+      "h2o-wave": path.resolve(__dirname, "src/custom/wave"),
     },
   },
 

@@ -21,7 +21,12 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": false,
     "noUnusedParameters": false,
-    "noUnusedLocals": false
+    "noUnusedLocals": false,
+
+    "baseUrl": "./",
+    "paths": {
+        "h2o-wave": ["src/custom/wave"]
+    }
   },
   "include": [
     "src"

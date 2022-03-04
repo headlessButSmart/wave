@@ -103,10 +103,10 @@ const
         wave.push()
       },
       init = () => {
-        //Allow passing server and route via props
-        listen(props.server, wave.socketURL, props.route)
-        //Allow passing of data in props
+        //Allow passing of data in props in following requests
         wave.args['data']=props.data
+        //Allow passing server, route, producer, data via props
+        listen(props.server, wave.socketURL, props.route, props.producer, props.data)
         window.addEventListener('hashchange', onHashChanged)
         window.addEventListener('md-link-click', onMdLinkClick)
       },

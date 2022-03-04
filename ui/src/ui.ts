@@ -121,8 +121,8 @@ export const
     }
   },
   //Allow passing of custom server and route
-  listen = (server:S, path: S, route:S) => {
-    _wave = connect(server, path, route, e => {
+  listen = (server:S, path: S, route:S, producer:S, data) => {
+    _wave = connect(server, path, route, producer, data, e => {
       switch (e.t) {
         case WaveEventType.Page:
         case WaveEventType.Error:
