@@ -111,9 +111,11 @@ const
         window.addEventListener('md-link-click', onMdLinkClick)
       },
       //Allow data update on props change
-      update = () => {
-        wave.args['data']=props.data
-        wave.push()
+      updateProps = (prevProps, newProps) => {
+        if (JSON.stringify(newProps.data) != JSON.stringify(prevProps.data)){
+          wave.args['data']=newProps.data
+          wave.push()
+        }
       },
       render = () => {
         const e = contentB()
@@ -160,7 +162,7 @@ const
         window.removeEventListener('md-link-click', onMdLinkClick)
       }
 
-    return { init, render, update, dispose, contentB }
+    return { init, render, updateProps, dispose, contentB }
   })
 
 export default App

@@ -33,6 +33,7 @@ class Runner extends React.Component<IProps, IState>{
   render(){
 
     console.log("Render: "+this.state.index);
+    console.log(testData[this.state.index]);
 
     const params = new URL(location.href).searchParams;
     const server = params.get('server'); //"ws://localhost:10101";

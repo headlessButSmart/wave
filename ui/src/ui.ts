@@ -23,6 +23,7 @@ interface Renderable {
   render(): JSX.Element
   init?(): void
   update?(): void
+  updateProps?(prevProps, newProps): void
   dispose?(): void
 }
 
@@ -59,8 +60,9 @@ export function bond<TProps, TState extends Renderable>(ctor: (props: TProps & {
       //Allow props in init
       if (this.model.init) this.model.init()
     }
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
       if (this.model.update) this.model.update()
+      if (this.model.updateProps) this.model.updateProps(prevProps, this.props)
     }
     componentWillUnmount() {
       if (this.model.dispose) this.model.dispose()
