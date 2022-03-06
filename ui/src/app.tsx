@@ -110,6 +110,11 @@ const
         window.addEventListener('hashchange', onHashChanged)
         window.addEventListener('md-link-click', onMdLinkClick)
       },
+      //Allow data update on props change
+      update = () => {
+        wave.args['data']=props.data
+        wave.push()
+      },
       render = () => {
         const e = contentB()
         if (e) {
