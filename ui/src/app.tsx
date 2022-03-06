@@ -160,7 +160,7 @@ const
         window.removeEventListener('md-link-click', onMdLinkClick)
       }
 
-    return { init, render, dispose, contentB }
+    return { init, render, update, dispose, contentB }
   })
 
 export default App
