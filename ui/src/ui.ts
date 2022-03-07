@@ -81,7 +81,7 @@ const
   clearRec = (a: Rec) => {
     for (const k in a) delete a[k]
   },
-  baseURL = (document ? document.getElementsByTagName('body')[0].getAttribute('data-base-url') : null) ?? '/',
+  baseURL = (!(typeof document === 'undefined') ? document.getElementsByTagName('body')[0].getAttribute('data-base-url') : null) ?? '/',
   socketURL = baseURL + '_s/',
   uploadURL = baseURL + '_f/',
   authURL = baseURL + '_auth/login'
@@ -182,4 +182,4 @@ export const
     }
   };
 
-(window as any).wave = wave
+if(!(typeof window === 'undefined')) (window as any).wave = wave

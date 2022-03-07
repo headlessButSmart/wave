@@ -18,7 +18,7 @@ import { createIntl, createIntlCache } from 'react-intl'
 
 const intlCache = createIntlCache() // prevents memory leaks per docs
 export const intl = createIntl({
-  locale: navigator.language,
+  locale: (global.navigator) ? global.navigator.language : 'en',
   messages: {},
   // Since we generate format messages on the fly, ignore all errors.
   // The intl lib requires messages to be initialized in advance,

@@ -158,6 +158,8 @@ const
         return <Fluent.Spinner className={css.centerFullHeight} size={Fluent.SpinnerSize.large} label='Loading ...' />
       },
       dispose = () => {
+        //reset content to clear cards on next display
+        contentB(null);
         window.removeEventListener('hashchange', onHashChanged)
         window.removeEventListener('md-link-click', onMdLinkClick)
       }
