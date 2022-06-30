@@ -159,7 +159,9 @@ const
       },
       dispose = () => {
         //reset content to clear cards on next display
-        contentB(null);
+        contentB(null)
+        //disconnect socket as no longer displaying
+        wave.stop()
         window.removeEventListener('hashchange', onHashChanged)
         window.removeEventListener('md-link-click', onMdLinkClick)
       }

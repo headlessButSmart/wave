@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { B, box, boxed, ChangeSet, connect, Dict, Disposable, on, Rec, S, U, Wave, WaveEvent, WaveEventType } from 'h2o-wave'
+import { B, box, boxed, ChangeSet, connect, disconnect, Dict, Disposable, on, Rec, S, U, Wave, WaveEvent, WaveEventType } from 'h2o-wave'
 import * as React from 'react'
 
 //
@@ -145,6 +145,10 @@ export const
       }
     })
   },
+  stop = () => {
+    if (!_wave) return
+    disconnect()
+  },
   push = () => {
     if (!_wave) return
 
@@ -167,6 +171,7 @@ export const
     debounce,
     throttle,
     push,
+    stop,
     fork: (): ChangeSet => {
       if (!_wave) throw new Error('not initialized')
       return _wave.fork()
